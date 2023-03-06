@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 //User Route
 Route::get('/', function () {
-    $number_order=Order::all()->count();
+    // $number_order=Order::all()->count();
 
    $products=Product::paginate(10);
-    return view('welcome',compact('products','number_order'));
+    return view('welcome',compact('products'));
 });
 
 Route::get('/added_already', function () {

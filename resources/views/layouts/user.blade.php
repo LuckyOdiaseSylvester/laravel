@@ -52,10 +52,10 @@
                            <a class="nav-link" href="{{ route('home') }}">Products</a>
                         </li>
                         <li class="nav-item">
-                         @auth
+                         {{-- @auth
                          <a class="nav-link" href="{{ route('customer_order') }}">Orders {{ $number_order }}</a>
                          @endauth
-                              <a class="nav-link" href="{{ route('customer_order') }}">Orders</a>
+                              <a class="nav-link" href="{{ route('customer_order') }}">Orders</a> --}}
 
                        
                         </li>
