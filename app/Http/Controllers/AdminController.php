@@ -161,7 +161,9 @@ class AdminController extends Controller
     
     public function product_details(Request $request,$id){
           $cart=Cart::where('user_id',Auth::user()->id)->first();
-          $number_order=Order::all()->count();
+        //   $number_order=Order::all()->count();
+        $number_order=Order::where('user_id',Auth::user()->id)->count();
+
 
         $products=Product::find($id);
         return view('product_details',compact('products','cart','number_order'));
@@ -292,7 +294,8 @@ class AdminController extends Controller
     }
 
     public function customer_order(Request $request){
-        $number_order=Order::all()->count();
+        // $number_order=Order::all()->count();
+        $number_order=Order::where('user_id',Auth::user()->id)->count();
 
         $customer=Order::where('user_id', Auth::user()->id)->count();
         $customer_orders=Order::where('user_id',Auth::user()->id)->get();
@@ -340,7 +343,8 @@ class AdminController extends Controller
     } 
 
     public function contact(){
-        $number_order=Order::all()->count();
+        // $number_order=Order::all()->count();
+        $number_order=Order::where('user_id',Auth::user()->id)->count();
 
         $cart=Cart::where('user_id',Auth::user()->id)->count();
 

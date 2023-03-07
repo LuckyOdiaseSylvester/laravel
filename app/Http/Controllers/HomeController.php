@@ -39,7 +39,7 @@ class HomeController extends Controller
         }
         // $user_meta=Cart::where('user_id',Auth::user()->id)->where('product_id',$id)->get();
         $products=Product::paginate(6);
-        $number_order=Order::all()->count();
+        $number_order=Order::where('user_id',Auth::user()->id)->count();
 
         return view('home',compact('products','cart','total_price','number_order'));
     }

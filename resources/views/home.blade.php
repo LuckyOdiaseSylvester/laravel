@@ -54,7 +54,13 @@
                            <a class="nav-link" href="{{ route('home') }}">Products</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="{{ route('customer_order') }}">Orders[{{ $number_order }}]</a>
+                           @auth
+                           @if( $number_order)
+                           <a class="nav-link" href="{{ route('customer_order') }}">Orders [{{ $number_order }}]</a>
+                           @else
+                           <a class="nav-link" href="{{ route('customer_order') }}">Orders</a>
+                           @endif
+                           @endauth
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="{{ route('contact') }}">Contact</a>

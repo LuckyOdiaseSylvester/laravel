@@ -53,7 +53,12 @@
                         </li>
                         <li class="nav-item">
                          @auth
-                         <a class="nav-link" href="{{ route('customer_order') }}">Orders {{ $number_order }}</a>
+                         @if( $number_order)
+                         <a class="nav-link" href="{{ route('customer_order') }}">Orders[{{ $number_order }}]</a>
+                         @else
+                         <a class="nav-link" href="{{ route('customer_order') }}">Orders</a>
+
+                         @endif
                          @endauth
 
                        
