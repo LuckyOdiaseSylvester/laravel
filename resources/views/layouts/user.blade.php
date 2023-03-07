@@ -55,10 +55,9 @@
                          @auth
                          <a class="nav-link" href="{{ route('customer_order') }}">Orders {{ $number_order }}</a>
                          @endauth
-                              <a class="nav-link" href="{{ route('customer_order') }}">Orders</a>
 
                        
-                              
+
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
